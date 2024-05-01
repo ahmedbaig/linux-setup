@@ -1,0 +1,32 @@
+#==== USAGE UPDATE ====#
+# Create your ssh key using this command with this host specific username
+# 
+# export USERNAME_WITH_HOST=dmgdev@auazr-devdbsharded-vm
+# export MY_USERNAME=johndoe
+# ssh-keygen -t rsa -f ~/.ssh/id_rsa.$MY_USERNAME.bitbucket -C $USERNAME_WITH_HOST -b 2048
+# 
+# Add your ssh key to ~/.ssh/config and follow these basic configs below
+# Host yourname-git
+#     User git # this has to be git
+#     Hostname bitbucket.org # this has to be bitbucket.org
+#     IdentityFile ~/.ssh/id_rsa.
+#     IdentitiesOnly yes
+
+# This is how you can use Bitbucket origin
+# git@ahmed-git:ahmedbaig-dmg/name-of-repo.git
+
+Host user-git
+    User git
+    Hostname bitbucket.org
+    IdentityFile ~/.ssh/id_rsa.user.bitbucket
+    IdentitiesOnly yes
+
+Host github.com
+    HostName github.com
+    IdentityFile ~/.ssh/id_rsa
+    UseKeychain yes
+
+Host bitbucket.org
+    HostName bitbucket.org
+    IdentityFile ~/.ssh/id_rsa
+    UseKeychain yes
