@@ -33,13 +33,19 @@ COMPLETION_WAITING_DOTiS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git textmate osx ruby node zsh-syntax-highlighting zsh-autosuggestions emoji emotty)
+plugins=(git textmate ruby node zsh-syntax-highlighting emoji emotty)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-# added my path 2011.7.19
-export PATH=/usr/local/bin:/usr/local/apache-maven-2.2.1/bin:/usr/local/maven-1.1/bin:/Developer/android/android-sdk-mac_x86/tools:/usr/local/mysql/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/mark/.rvm/bin
+# added my path 2024.5.15
+#export PATH=/usr/local/bin:/usr/local/apache-maven-2.2.1/bin:/usr/local/maven-1.1/bin:/Developer/android/android-sdk-mac_x86/tools:/usr/local/mysql/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/mark/.rvm/bin
+
+# Adding homebrew to path variables
+export PATH=/opt/homebrew/bin:$PATH
+
+# Adding gnu libraries to path
+export PATH=/opt/homebrew/opt/make/libexec/gnubin:$PATH
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -172,6 +178,8 @@ ktnls() { pkill -f 'ssh -[LR]'; }
 # finis
 # mhn 2011.7.19
 
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 [[ -s "/Users/ahmedbaig/.gvm/scripts/gvm" ]] && source "/Users/ahmedbaig/.gvm/scripts/gvm"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -179,3 +187,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
