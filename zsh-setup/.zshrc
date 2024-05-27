@@ -78,6 +78,9 @@ alias 'ttop=top -ocpu -R -F -s 2 -n30'
 alias lh='ls -a | egrep "^\."'
 alias python='/usr/bin/python3'
 alias v="fd --type f --exclude .git | fzf-tmux -p | xargs nvim"
+alias vim="nvim"
+alias vi="nvim"
+alias oldvim="vim"
 eval "$(jump shell --bind=z)"
 
 # -------------------------------------------------------------------
@@ -173,7 +176,7 @@ i() { cd "$(cat ~/.save_dir)" ; }
 c() { cd "$@" && ls -alhtrS; }
 rgpg() { gpgconf --kill gpg-agent && gpg-agent --daemon; }
 ktnls() { pkill -f 'ssh -[LR]'; }
-
+f() { fzf --height=40% --layout=reverse --info=inline --border --margin=1 --padding=1 --preview="cat {}" | xargs code; }
 #
 # finis
 # mhn 2011.7.19
