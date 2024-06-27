@@ -30,3 +30,23 @@ Host bitbucket.org
     HostName bitbucket.org
     IdentityFile ~/.ssh/id_rsa
     UseKeychain yes
+
+Host Internal-Stack-Atlas
+    HostName 192.168.7.101
+    IdentityFile ~/.ssh/id_rsa
+    UseKeychain yes
+
+Host Atlas-Staging-1
+    HostName 192.168.16.57
+    IdentityFile ~/.ssh/id_rsa
+    UseKeychain yes
+
+Host Atlas-Staging-2
+    HostName 192.168.16.57
+    IdentityFile ~/.ssh/id_rsa
+    UseKeychain yes
+
+Host Staging
+    HostName 192.168.16.167
+    IdentityFile ~/.ssh/id_rsa
+    UseKeychain yes

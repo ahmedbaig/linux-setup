@@ -7,6 +7,8 @@ echo "========================="
 CURRENT_PATH=$(cd -- "$(dirname "$0")" && pwd -P)
 
 IP=$1
+KEY_PATH=$2
+USER=$3
 
 check_file_exists() {
     local file_path="$1"
@@ -20,8 +22,8 @@ check_file_exists() {
     fi
 }
 
-SSH_PATH="$CURRENT_PATH/key.pem"
+SSH_PATH="$KEY_PATH"
 
 check_file_exists $SSH_PATH
 
-ssh -i $SSH_PATH ec2-user@$IP
+ssh -i $SSH_PATH -A $USER@$IP
